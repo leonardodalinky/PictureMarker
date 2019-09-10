@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/qss">
+        <file alias="Aqua">QSS/Aqua.qss</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file alias="Brush">Icon/brush.ico</file>
+        <file alias="CIrcle">Icon/circle.ico</file>
+        <file alias="Clear">Icon/clear.ico</file>
+        <file alias="DrawingPad">Icon/drawingpad.ico</file>
+        <file alias="File">Icon/file.ico</file>
+        <file alias="Folder">Icon/folder.ico</file>
+        <file alias="Icon">Icon/icon.ico</file>
+        <file alias="Mouse">Icon/mouse.ico</file>
+        <file alias="Rect">Icon/rect.ico</file>
+        <file alias="Redo">Icon/redo.ico</file>
+        <file alias="Rubber">Icon/rubber.ico</file>
+        <file alias="Save">Icon/save.ico</file>
+        <file alias="Saveto">Icon/saveto.ico</file>
+        <file alias="Undo">Icon/undo.ico</file>
+        <file alias="ZoomIn">Icon/zoomin.ico</file>
+        <file alias="ZoomOut">Icon/zoomout.ico</file>
+        <file alias="Marker">Icon/marker.ico</file>
+        <file alias="Lens">Icon/lens.ico</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1036</width>
+    <height>754</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>PictureMarker</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/icon/Icon</normalon>
+   </iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QWidget" name="rightFrame" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1036</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action_AddFiles"/>
+    <addaction name="action_AddFileFolder"/>
+    <addaction name="action_ClearFiles"/>
+    <addaction name="separator"/>
+    <addaction name="action_AddMarker"/>
+    <addaction name="action_Save"/>
+    <addaction name="action_SaveTo"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="editMenu">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="action_Undo"/>
+    <addaction name="action_Redo"/>
+   </widget>
+   <widget class="QMenu" name="windowMenu">
+    <property name="title">
+     <string>窗口</string>
+    </property>
+    <addaction name="action_FileWindow"/>
+    <addaction name="action_MarkerWindow"/>
+    <addaction name="action_ToolWindow"/>
+    <addaction name="action_LensWindow"/>
+   </widget>
+   <widget class="QMenu" name="helpMenu">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_Author"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="editMenu"/>
+   <addaction name="windowMenu"/>
+   <addaction name="helpMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_AddFiles"/>
+   <addaction name="action_AddFileFolder"/>
+   <addaction name="action_ClearFiles"/>
+   <addaction name="separator"/>
+   <addaction name="action_AddMarker"/>
+   <addaction name="action_Save"/>
+   <addaction name="action_SaveTo"/>
+  </widget>
+  <widget class="QDockWidget" name="toolDockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>210</width>
+     <height>248</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>工具箱</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="toolDock">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="ToolManager" name="toolBox" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>200</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="lensDockWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>210</width>
+     <height>210</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>放大镜窗口</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="lensDock">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QLabel" name="lensLabel">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="FileDockWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="windowTitle">
+    <string>文件管理</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="fileDock">
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="FileManager" name="fileBox" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>200</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="MarkerDockWidget">
+   <property name="windowTitle">
+    <string>标注管理</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="markerDock">
+    <layout class="QVBoxLayout" name="verticalLayout_7">
+     <item>
+      <widget class="MarkerManager" name="markerBox" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>200</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="action_AddFiles">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/File</normaloff>:/icon/File</iconset>
+   </property>
+   <property name="text">
+    <string>  添加文件...</string>
+   </property>
+   <property name="toolTip">
+    <string>选择单数/复数文件进行添加</string>
+   </property>
+   <property name="statusTip">
+    <string>选择单数/复数文件进行添加</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="action_AddFileFolder">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/Folder</normaloff>:/icon/Folder</iconset>
+   </property>
+   <property name="text">
+    <string>  添加CT文件夹</string>
+   </property>
+   <property name="toolTip">
+    <string>添加文件夹下所有CT图片</string>
+   </property>
+   <property name="statusTip">
+    <string>添加文件夹下所有CT图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+A</string>
+   </property>
+  </action>
+  <action name="action_ClearFiles">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/Clear</normaloff>:/icon/Clear</iconset>
+   </property>
+   <property name="text">
+    <string>  清空文件</string>
+   </property>
+   <property name="toolTip">
+    <string>清空所有已添加的文件</string>
+   </property>
+   <property name="statusTip">
+    <string>清空所有已添加的文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="action_Undo">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/Undo</normaloff>:/icon/Undo</iconset>
+   </property>
+   <property name="text">
+    <string>  撤销上一步</string>
+   </property>
+   <property name="toolTip">
+    <string>返回至上一步的操作</string>
+   </property>
+   <property name="statusTip">
+    <string>返回至上一步的操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_Redo">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/Redo</normaloff>:/icon/Redo</iconset>
+   </property>
+   <property name="text">
+    <string>  恢复下一步</string>
+   </property>
+   <property name="toolTip">
+    <string>恢复下一步的操作</string>
+   </property>
+   <property name="statusTip">
+    <string>恢复下一步的操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/Save</normaloff>:/icon/Save</iconset>
+   </property>
+   <property name="text">
+    <string>  保存标注</string>
+   </property>
+   <property name="statusTip">
+    <string>保存标注到现在打开的标注文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_SaveTo">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/Saveto</normaloff>:/icon/Saveto</iconset>
+   </property>
+   <property name="text">
+    <string>  保存标注至...</string>
+   </property>
+   <property name="toolTip">
+    <string>保存标注至...</string>
+   </property>
+   <property name="statusTip">
+    <string>保存标注至...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="action_AddMarker">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/Marker</normaloff>:/icon/Marker</iconset>
+   </property>
+   <property name="text">
+    <string>  加载标注...</string>
+   </property>
+   <property name="statusTip">
+    <string>加载标注</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="action_FileWindow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>  文件窗口</string>
+   </property>
+  </action>
+  <action name="action_MarkerWindow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>  标注窗口</string>
+   </property>
+  </action>
+  <action name="action_ToolWindow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>  工具箱窗口</string>
+   </property>
+  </action>
+  <action name="action_LensWindow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>  放大镜窗口</string>
+   </property>
+  </action>
+  <action name="action_Author">
+   <property name="text">
+    <string>  作者信息</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>FileManager</class>
+   <extends>QWidget</extends>
+   <header location="global">filemanager.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ToolManager</class>
+   <extends>QWidget</extends>
+   <header location="global">toolmanager.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MarkerManager</class>
+   <extends>QWidget</extends>
+   <header location="global">markermanager.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="rsc.qrc"/>
+ </resources>
+ <connections/>
+</ui>
